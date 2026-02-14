@@ -1,144 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For the wife of my kids 🤍</title>
 
 <style>
-  * { box-sizing: border-box; }
+* { box-sizing: border-box; }
 
-  body {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-    font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-    color: #fff;
-  }
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+}
 
-  .card {
-    text-align: center;
-    background: rgba(255,255,255,0.06);
-    padding: 34px 28px;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 40px rgba(255, 0, 150, 0.28);
-    position: relative;
+.card {
+  text-align: center;
+  background: rgba(255,255,255,0.06);
+  padding: 35px 28px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 40px rgba(255, 0, 150, 0.28);
+  width: 92%;
+  max-width: 420px;
+  overflow: hidden;
+}
 
-    width: 92%;
-    max-width: 420px;
+h1 {
+  margin: 10px 0;
+  font-size: 24px;
+}
 
-    /* keeps all content inside */
-    overflow: hidden;
-    word-break: break-word;
-  }
+p {
+  margin-bottom: 25px;
+  line-height: 1.4;
+  font-size: 15px;
+  opacity: 0.9;
+}
 
-  h1 {
-    margin: 10px 0 10px;
-    font-size: 24px;
-    line-height: 1.2;
-  }
+.photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  margin-bottom: 18px;
+}
 
-  p {
-    opacity: 0.9;
-    margin: 0 0 22px;
-    line-height: 1.4;
-    font-size: 15px;
-  }
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-top: 10px;
+  position: relative;
+}
 
-  .photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #fff;
-    margin: 0 auto 18px;
-    display: block;
-  }
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 999px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
 
-  .buttons {
-    position: relative;
-    height: 64px;
-  }
+button:active {
+  transform: scale(0.96);
+}
 
-  button {
-    padding: 12px 22px;
-    border: none;
-    border-radius: 999px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: transform 0.15s ease;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-  }
+.yes {
+  background: #ff4da6;
+  color: white;
+  font-weight: 600;
+}
 
-  button:active { transform: scale(0.98); }
+.no {
+  background: white;
+  color: black;
+  position: relative;
+}
 
-  .yes {
-    background: #ff4da6;
-    color: #fff;
-    font-weight: 600;
-  }
+.success {
+  font-size: 18px;
+  line-height: 1.5;
+  animation: fadeIn 0.6s ease forwards;
+}
 
-  .no {
-    background: #fff;
-    color: #111;
-    position: absolute;
-    left: 58%;
-    top: 0;
-  }
+.sig {
+  margin-top: 10px;
+  font-size: 16px;
+}
 
-  .success {
-    font-size: 18px;
-    line-height: 1.45;
-    padding: 6px 0;
-    animation: fadeIn 0.6s ease forwards;
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
 
-    /* ensure it never spills out */
-    max-width: 100%;
-    overflow-wrap: anywhere;
-  }
+.heart {
+  position: fixed;
+  bottom: -14px;
+  font-size: 20px;
+  animation: float 5s linear forwards;
+  opacity: 0.75;
+}
 
-  .sig {
-    margin-top: 10px;
-    font-size: 16px;
-    opacity: 0.95;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.98); }
-    to { opacity: 1; transform: scale(1); }
-  }
-
-  .heart {
-    position: fixed;
-    bottom: -14px;
-    font-size: 20px;
-    animation: float 5s linear forwards;
-    opacity: 0.75;
-    pointer-events: none;
-  }
-
-  @keyframes float {
-    from { transform: translateY(0); }
-    to { transform: translateY(-110vh); }
-  }
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-110vh); }
+}
 </style>
 </head>
 
 <body>
 
 <audio id="bgMusic" loop>
-  <source src="music.mp3" type="audio/mpeg" />
+  <source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <div class="card" id="card">
-  <img src="her.jpg" class="photo" alt="Nur" />
+  <img src="her.jpg" class="photo" alt="Nur">
 
   <h1>To my most beautiful niqabi.</h1>
 
@@ -155,68 +143,61 @@
 </div>
 
 <script>
-  const yesBtn = document.getElementById("yesBtn");
-  const noBtn = document.getElementById("noBtn");
-  const card = document.getElementById("card");
-  const music = document.getElementById("bgMusic");
+const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
+const card = document.getElementById("card");
+const music = document.getElementById("bgMusic");
 
-  function isMobile() {
-    return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-  }
+function isMobile() {
+  return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+}
 
-  // Desktop: dodge on hover
-  // Mobile: teleport on tap
-  function dodgeNoDesktop() {
-    const x = Math.random() * 220 - 110;
-    const y = Math.random() * 120 - 60;
-    noBtn.style.transform = `translate(${x}px, ${y}px)`;
-  }
+function dodgeNoDesktop() {
+  const x = Math.random() * 200 - 100;
+  const y = Math.random() * 80 - 40;
+  noBtn.style.transform = `translate(${x}px, ${y}px)`;
+}
 
-  function teleportNoMobile() {
-    const btnW = 90;
-    const btnH = 44;
-    const x = Math.random() * (window.innerWidth - btnW);
-    const y = Math.random() * (window.innerHeight - btnH);
+function teleportNoMobile() {
+  const btnW = 100;
+  const btnH = 45;
+  const x = Math.random() * (window.innerWidth - btnW);
+  const y = Math.random() * (window.innerHeight - btnH);
+  noBtn.style.position = "fixed";
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+}
 
-    noBtn.style.position = "fixed";
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
-    noBtn.style.transform = "translate(0,0)";
-    noBtn.style.zIndex = "5";
-  }
+if (isMobile()) {
+  noBtn.addEventListener("click", teleportNoMobile);
+} else {
+  noBtn.addEventListener("mouseover", dodgeNoDesktop);
+}
 
-  if (isMobile()) {
-    noBtn.addEventListener("click", teleportNoMobile);
-  } else {
-    noBtn.addEventListener("mouseover", dodgeNoDesktop);
-  }
+yesBtn.addEventListener("click", () => {
+  music.play();
 
-  yesBtn.addEventListener("click", () => {
-    // music starts on click (browser-friendly)
-    try { music.play(); } catch(e) {}
+  card.innerHTML = `
+    <div class="success">
+      YES! I love you so much, I know this isn't much but I thought it was cute. 🤍
+      <div class="sig">— Your big daddy</div>
+    </div>
+  `;
 
-    card.innerHTML = `
-      <div class="success">
-        I love you so much, I know this isn't much but I wanted to do something unique. 🤍
-        <div class="sig">— Your baby</div>
-      </div>
-    `;
+  startHearts();
+});
 
-    startHearts();
-  });
-
-  function startHearts() {
-    setInterval(() => {
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.textContent = "🤍";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.fontSize = (16 + Math.random() * 16) + "px";
-      document.body.appendChild(heart);
-
-      setTimeout(() => heart.remove(), 5200);
-    }, 260);
-  }
+function startHearts() {
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "🤍";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (16 + Math.random() * 16) + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 5000);
+  }, 250);
+}
 </script>
 
 </body>
